@@ -6,13 +6,12 @@ function generateGrid(gridSize)
     container.innerHTML='';
 
     //generate new canvas
-    container.style = `margin: 0 auto; width: ${containerSize}px; height: ${containerSize}px;`;
+    container.style = `margin: 0 auto; line-height: ${containerSize/gridSize}px; width: ${containerSize}px; height: ${containerSize}px;`;
 
     for(let i = 0; i < gridSize *gridSize; i++)
     {   
         const div = document.createElement('div');
-        div.style = `display: inline-block; width: ${containerSize/gridSize}px; height: ${containerSize/gridSize}px;
-        margin-bottom: -4px`;
+        div.style = `display: inline-block; margin: 0;vertical-align: top; width: ${containerSize/gridSize}px; height: ${containerSize/gridSize}px;`;
         div.onmouseover = function changeColor(){
             this.style.backgroundColor = 'black';
         };
